@@ -21,18 +21,33 @@ var server = http.createServer(function(request, response){
   console.log('HTTP 路径为\n' + path)
   
    if(path == '/ajax.js'){
-    let main1 = fs.readFileSync('ajax.js','utf-8')
+    let main1 = fs.readFileSync('./ajax.js','utf-8')
     response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
     response.write(main1)
     response.end()
   }else if(path == '/'){
-    let string = fs.readFileSync('ajax.html','utf-8')
+    let string = fs.readFileSync('./ajax.html','utf-8')
     response.setHeader('Content-Type', 'text/html; charset=utf-8')
     response.write(string)
     response.end()
   }else if(path === '/pay'){
     response.setHeader('Content-Type', 'text/json;charset=utf-8')
     response.write(`{"name":"zhangsan","age":14}`)
+    response.end()
+  }else if(path == '/jqueryajax.js'){
+    let main1 = fs.readFileSync('./jqueryajax.js','utf-8')
+    response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
+    response.write(main1)
+    response.end()
+  }else if(path == '/jqueryAjaxUpLv.js'){
+    let main1 = fs.readFileSync('./jqueryAjaxUpLv.js','utf-8')
+    response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
+    response.write(main1)
+    response.end()
+  }else if(path == '/promiseajax.js'){
+    let main1 = fs.readFileSync('./promiseajax.js','utf-8')
+    response.setHeader('Content-Type', 'text/javascript; charset=utf-8')
+    response.write(main1)
     response.end()
   }else{
     response.statusCode = 404
