@@ -9,7 +9,7 @@ but.addEventListener('click',function (event){
 	}//生成一个函数，其名随机
 
 	var script = document.createElement('script')//动态创建script标签,
-	script.src = '/pay?callback=' + zhangsan     //添加请求路径
+	script.src = 'www.baidu.com'     //添加请求路径
 	document.body.appendChild(script)			 //插入html文档后自动发送get请求
 
 	script.onload = function(e){
@@ -21,6 +21,7 @@ but.addEventListener('click',function (event){
 	script.onerron = function(e){
 		script.remove()
 		delete window[zhangsan]
+		console.log(1)
 	}//失败，删除script标签和随机函数命
 	
 })
