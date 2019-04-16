@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        !function  (){
+            function promise(a){
+                return new Promise(function (resolve,reject){
+                            resolve('[你成功了]')
+                            console.log('promise')
+                            我干你大爷
+                        
+                })
+            }
+
+            promise(9999).then( (resolve)=>{console.log('我是第一个then的第一个回调我接收到的参数是：',resolve);return '[第一个then的第一个回调]'})
+
+        }.call()    
+    </script>
+</body>
+</html>
